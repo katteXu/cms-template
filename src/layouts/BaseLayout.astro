@@ -1,0 +1,29 @@
+---
+import { ViewTransitions } from "astro:transitions";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+
+const {pageTitle} = Astro.props;
+---
+
+<!doctype html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="keywords" content="keywords" />
+    <meta name="description" content="description" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{pageTitle}</title>
+    <link rel="sitemap" href="/sitemao-index.xml" />
+    
+    <ViewTransitions />
+    
+  </head>
+  <body class="bg-gray-200 flex flex-col min-h-screen">
+    <Header />
+    <slot />
+    <Footer />
+  </body>
+</html>
